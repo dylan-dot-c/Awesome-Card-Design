@@ -1,0 +1,108 @@
+* {
+  font-family: "Baloo 2", serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #27272c;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  width: 330px;
+  position: relative;
+  background: #1e1c22;
+  transform: skewY(-10deg);
+  border-radius: 20px;
+}
+
+.card--content {
+  transform: skewY(0deg);
+  background: #1e1c22;
+  border-radius: 10px;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 3px);
+  top: -3px;
+  left: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    #d367c1 10%,
+    #dedf40 25%,
+    #62cb5c 50%,
+    #00bbcb 75%,
+    #ab79d6 90%
+  );
+  transition: 0.4s;
+  z-index: -1;
+}
+
+.card:hover::after {
+  transform: scale(1.05);
+  border-radius: 10px;
+}
+
+.card:hover p > span {
+  color: #ab79d6;
+}
+
+.card:hover .index {
+  color: #ab79d6;
+  opacity: 1;
+}
+
+.card:hover h2 {
+  color: #00bbcb;
+}
+
+h2 {
+  margin: 0;
+  color: #ab79d6;
+  transition: 0.4s;
+}
+
+.index {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-size: 30px;
+  font-weight: 700;
+  opacity: 0.5;
+  color: #c5c5ce;
+  transition: 0.4s;
+}
+
+.inside {
+  color: #c5c5ce;
+  position: relative;
+  transform: skewY(10deg);
+  padding: 3.5rem 2rem;
+}
+
+p {
+  font-size: 18px;
+}
+
+.read--more {
+  font-size: 20px;
+  color: #dedf40;
+}
+
+.card:hover .read--more {
+  text-decoration: underline;
+  color: #00bbcb;
+  transform: scale(0.7);
+}
